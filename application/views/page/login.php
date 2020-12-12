@@ -11,25 +11,46 @@
 </script>
 <body>
 <center>
- <form>
   <br><div class='container'>
+    <?php if($this->session->flashdata('pesan')): ?>
+      <div class="alert <?php echo $this->session->flashdata('alert'); ?>"><?php echo $this->session->flashdata('pesan'); ?></div>
+    <?php endif ?>
     <br><img src="<?php echo base_url('assets/images/mipicts.png'); ?>" widht="48" height="48">
     <br><h2>Masuk ke akun mi</h2>
-    <form name="myname">
+    <?php echo form_open(base_url('login/proses')); ?>
       <div class ="form-group" >
-        <input type = "text" name="Name" placeholder = "email/telepon/akun mi" class='form-control InLinetext1' required>
+        <?php 
+          $data = array(
+                  'type'  => 'text',
+                  'name'  => 'email',
+                  'class' => 'form-control InLinetext1',
+                  'value' => set_value('email'),
+                  'placeholder' => 'email'
+          );
+          echo form_input($data);
+
+          echo form_error('email', '<div class="text-danger">', '</div>');
+        ?>
       </div>
-    </form>
-    <form name="mypw">
       <div class="form-group">
-        <input type="password" name="pw" class="form-control InLinetext1" placeholder="sandi" required>
+        <?php 
+          $data = array(
+                  'type'  => 'password',
+                  'name'  => 'password',
+                  'class' => 'form-control InLinetext1',
+                  'placeholder' => 'sandi'
+          );
+          echo form_input($data);
+          echo form_error('password', '<div class="text-danger">', '</div>');
+        ?>
       </div>
-    </form>
-    </form>
-      <div>
-    	 <button class="btn btn-primary buttonMasuk"> Masuk </button> <br> <br>
-      </div>
-        <a href="register.html">Buat akun</a>
+       <?php 
+          echo form_submit(['name' => 'submit', 'class' => 'btn btn-primary buttonMasuk'], 'Masuk');
+
+          echo form_close();
+       ?>
+    <br>
+        <a href="<?php echo base_url('register'); ?>">Buat akun</a>
         <a> | </a>
         <a href="lupasandi.html">Lupa sandi?</a>
   </div>
