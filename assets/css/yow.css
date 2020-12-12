@@ -1,0 +1,48 @@
+.h2style {
+ text-align: center;
+}
+
+.pstyle {
+ text-align: center;
+
+}
+
+.buttonMI {
+ height: 45px;
+ width: 350px;
+ background-color: #ff6700;
+}
+
+.buttonNoTelp {
+ height: 45px;
+ width: 350px;
+ background-color: #414a4c;
+}
+
+.InLinetext1 {
+ height: 45px;
+ width: 350px;
+}
+
+.AhrefBlack {
+ color: black;
+
+}
+
+.center {
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+body {
+ background-color: rgb(224, 224, 224);
+}
+
+.container {
+ background-color: white;
+}
+
+a {
+ color: white;
+}

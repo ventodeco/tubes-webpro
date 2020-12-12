@@ -1,0 +1,59 @@
+.HorizontalLine{
+    display: block;
+    margin-end: auto;
+    margin-start: auto;
+    border: 1px inset;
+    overflow: hidden;
+    margin-before: 0.5em;
+    margin-after: 0.5em;
+
+}
+
+.Rectangle{
+	width:144px;
+	height:65px;
+  border-style: solid;
+	background-color:black;
+	border-color: orange;
+}
+.Circle{
+  height:25px;
+  width:25px;
+  background-color: #bbb;
+  border-radius:50%;
+  display:inline-block;
+
+
+
+}
+.BigRectangle {
+  width:450px;
+	height:200px;
+  border-style: solid;
+	background-color:white;
+	border-color:1px black;
+}
+
+.ConfirmationRectangle{
+  width:450px;
+  height:100px;
+ border-style:solid;
+ margin-top:20px;
+ border-color:yellow;
+
+
+}
+.lowerchar{
+font-size:11px;
+
+
+}
+.longbutton{
+  width:300px;
+  height: 40px;
+  background-color: orange;
+
+
+
+
+}
