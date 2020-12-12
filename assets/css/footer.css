@@ -1,0 +1,28 @@
+.col-md-3
+{
+	margin-top:-25px;
+	margin-right:-35px;
+
+}
+.square{
+ 	height:50px;
+	width:180px;
+	border:white 2px solid;
+	background-color:black;
+	
+}
+footer{
+	background-color:black;
+	height:300px;
+
+}
+.centered{
+   margin:auto;
+   padding:20px;
+
+}
+.col-md-2{
+
+	color:white;
+
+}
