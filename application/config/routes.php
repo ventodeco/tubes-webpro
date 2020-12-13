@@ -12,7 +12,7 @@ $route['register/proses'] = 'user/prosesRegister';
 $route['logout'] = 'user/logout';
 
 // admin
-$route['dashboard'] = 'barang/dashboard';
+$route['dashboard'] = 'dashboard';
 // admin barang
 $route['dashboard/barang'] = 'barang';
 $route['dashboard/barang/add'] = 'barang/add';
@@ -28,3 +28,11 @@ $route['dashboard/kategori/create'] = 'category/create';
 $route['dashboard/kategori/edit/(:any)'] = 'category/edit/$1';
 $route['dashboard/kategori/update/(:any)'] = 'category/update/$1';
 $route['dashboard/kategori/delete/(:any)'] = 'category/delete/$1';
+
+// admin kota
+$route['dashboard/kota'] = 'kota';
+$route['dashboard/kota/add'] = 'kota/add';
+$route['dashboard/kota/create'] = 'kota/create';
+$route['dashboard/kota/edit/(:any)'] = 'kota/edit/$1';
+$route['dashboard/kota/update/(:any)'] = 'kota/update/$1';
+$route['dashboard/kota/delete/(:any)'] = 'kota/delete/$1';

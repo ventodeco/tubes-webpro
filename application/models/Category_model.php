@@ -1,7 +1,7 @@
 <?php
 
-class Category_model extends CI_Model {
-
+class Category_model extends CI_Model 
+{
     public function create($data)
     {
         $this->db->insert('category', $data);

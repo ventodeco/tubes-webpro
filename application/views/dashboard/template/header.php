@@ -34,7 +34,9 @@
             <li><a href="<?php echo base_url('home'); ?>">Home</a></li>
             <li><a href="<?php echo base_url('dashboard/barang'); ?>">Barang</a></li>
             <li><a href="<?php echo base_url('dashboard/kategori'); ?>">Kategori</a></li>
+            <li><a href="<?php echo base_url('dashboard/kota'); ?>">Kota</a></li>
             <li><a href="<?php echo base_url('logout'); ?>">Logout</a></li>
         </ul>
     </div>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <h1><?php echo $title; ?></h1>
