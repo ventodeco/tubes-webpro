@@ -68,12 +68,6 @@ class Barang extends CI_Controller
         redirect('dashboard/barang');
     }
 
-    public function dashboard()
-    {
-        $data['title'] = 'Dashboard Admin';
-        $this->load->view('dashboard/index', $data);
-    }
-
     private function isLoginAlreadyAndIsAdmin()
     {
         if(empty($this->session->user_id) || ($this->session->logged_in && !$this->session->is_admin)){
