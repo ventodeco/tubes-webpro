@@ -33,6 +33,7 @@
             <li><a href="<?php echo base_url('dashboard'); ?>">Dashboard</a></li>
             <li><a href="<?php echo base_url('home'); ?>">Home</a></li>
             <li><a href="<?php echo base_url('dashboard/barang'); ?>">Barang</a></li>
+            <li><a href="<?php echo base_url('dashboard/kategori'); ?>">Kategori</a></li>
             <li><a href="<?php echo base_url('logout'); ?>">Logout</a></li>
         </ul>
     </div>
