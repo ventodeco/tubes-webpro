@@ -1,6 +1,4 @@
 <html>
-
-
 <head>	
   	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
@@ -9,6 +7,7 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  	<title>Home</title>
 </head>
 <body>
  	<nav class="navbar navbar-inverse">
@@ -21,9 +20,19 @@
 	       <li class="nav-item"> <a href="#">MI COMMUNITTY</a></li>
 	    </ul>
 	     <ul class="nav navbar-nav  navbar-right">
-		<li class="nav-item"> <a href="#">Masuk </a></li>
-		<li class="nav-item"> <a href="#">|</a></li>
-		<li class="nav-item"> <a href="#">Daftar</a></li>
+	    <?php if ($this->session->logged_in) { ?>
+	    	<li class="nav-item"> <a href="#">Selamat Datang <?php echo $this->session->name ?> </a></li>
+		<li class="nav-item"><a href="#">|</a></li>
+		<li class="nav-item"> <a href="<?php echo base_url('logout'); ?>">Logout</a></li>
+	    <?php } else { ?>
+		<li class="nav-item"> <a href="<?php echo base_url('login'); ?>">Masuk </a></li>
+		<li class="nav-item"><a href="#">|</a></li>
+		<li class="nav-item"> <a href="<?php echo base_url('register'); ?>">Daftar</a></li>
+		<?php } ?>
+		<?php if ($this->session->is_admin) { ?>
+			<li class="nav-item"><a href="#">|</a></li>
+			<li class="nav-item"> <a href="<?php echo base_url('dashboard'); ?>">Dashboard</a></li>
+		<?php } ?>
 		<li class="nav-item"> <a href="#">|</a></li>
 		<li class="nav-item"> <a href="#"><span class="	glyphicon glyphicon-shopping-cart"></span>  Keranjang (0)</a></li> 
 	    </ul>
@@ -82,14 +91,4 @@
 		</a>
 	</section>
 </body>
-
-
-
-
-
-
-
-
-
-
 </html>
