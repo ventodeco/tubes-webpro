@@ -1,7 +1,7 @@
 <?php
 
-class Barang_model extends CI_Model {
-
+class Barang_model extends CI_Model 
+{
     public function create($data)
     {
         $this->db->insert('barang', $data);

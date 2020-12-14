@@ -36,3 +36,11 @@ $route['dashboard/kota/create'] = 'kota/create';
 $route['dashboard/kota/edit/(:any)'] = 'kota/edit/$1';
 $route['dashboard/kota/update/(:any)'] = 'kota/update/$1';
 $route['dashboard/kota/delete/(:any)'] = 'kota/delete/$1';
+
+// admin banner
+$route['dashboard/banner'] = 'banner';
+$route['dashboard/banner/add'] = 'banner/add';
+$route['dashboard/banner/create'] = 'banner/create';
+$route['dashboard/banner/edit/(:any)'] = 'banner/edit/$1';
+$route['dashboard/banner/update/(:any)'] = 'banner/update/$1';
+$route['dashboard/banner/delete/(:any)'] = 'banner/delete/$1';
