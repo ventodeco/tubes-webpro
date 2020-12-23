@@ -48,3 +48,8 @@ $route['dashboard/banner/delete/(:any)'] = 'banner/delete/$1';
 // home
 $route['products'] = 'home/products/0';
 $route['products/(:any)'] = 'home/products/$1';
+
+$route['product/(:any)'] = 'home/product/$1';
+
+// keranjang
+$route['keranjang'] = 'keranjang';

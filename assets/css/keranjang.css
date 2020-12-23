@@ -158,6 +158,17 @@ header {
     text-transform: uppercase;
 }
 
+.mini-header .keranjang-active {
+    margin: 0 36px;
+    flex-grow: 1;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 200;
+    color: #ff6700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 /* body */
 .gambar_keranjang{
     margin: 100 100px;
@@ -217,4 +228,44 @@ header {
     object-fit: contain;
     overflow: hidden;
     cursor: pointer;
+}
+
+/* css untuk step 2 */
+.information{
+    padding: 70px;
+}
+
+.bodyinformation{
+    min-height: 300px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 650px;
+}
+
+.tableheader {
+    color: #ffffff;
+}
+
+.biodata, th, td {
+    border: 1px solid black;
+}
+
+.detail, th, td {
+    border: 1px solid black;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+  }
+
+.sizebox{
+    width: 100%;
+}
+
+.sizealamat{
+    width: 100%;
+    height: 50px;
 }

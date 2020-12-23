@@ -23,10 +23,9 @@
 			<li class="nav-item"> <a href="<?php echo base_url('dashboard'); ?>">Dashboard</a></li>
 		<?php } ?>
 		<li class="nav-item"> <a href="#">|</a></li>
-		<li class="nav-item"> <a href="#"><span class="	glyphicon glyphicon-shopping-cart"></span>  Keranjang (0)</a></li> 
+		<li class="nav-item"> <a href="<?php echo base_url('keranjang'); ?>"><span class="	glyphicon glyphicon-shopping-cart"></span>  Keranjang</a></li> 
 	    </ul>
 	    </div>
-	  </div>
 	</nav>
 	<nav class="navbar navbar-default">
 	<div class="container-fluid">
@@ -36,7 +35,7 @@
 	   <ul class="nav navbar-nav navbar-right">
 		<li class="nav-item"> <a href="<?php echo base_url('products'); ?>">All Products </a></li>
 		<?php foreach ($categories as $category): ?>
-			<li class="nav-item"> <a href="<?php echo base_url('product/' . $category->id); ?>"><?php echo $category->name ?> </a></li>
+			<li class="nav-item"> <a href="<?php echo base_url('products/' . $category->id); ?>"><?php echo $category->name ?> </a></li>
 		<?php endforeach ?>
 		
 	   </ul> 

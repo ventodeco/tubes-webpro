@@ -64,6 +64,19 @@
         ?>
   </div>
   <div class="form-group">
+    <label for="category_id">Kategori</label>
+    <?php 
+          $cat = [];
+          foreach ($categories as $category) {
+            $cat[$category->id] = $category->name;
+          }
+  
+          echo form_dropdown('category_id', $cat, $row->category_id ?? null);
+
+          echo form_error('category_id', '<div class="text-danger">', '</div>');
+        ?>
+  </div>
+  <div class="form-group">
     <label for="image">Gambar Banner</label>
     <input type="file" name="image">
     <div class="text-danger"><?php echo $error; ?></div>
