@@ -28,8 +28,8 @@ class Banner extends CI_Controller
 
     public function create()
     {
-        $this->verifyFile();
         $this->formValidation();
+        $this->verifyFile();
         if (!$this->upload->do_upload('image') || $this->form_validation->run() == FALSE) {
             $error = $this->upload->display_errors();
             $this->add($error);
@@ -37,7 +37,7 @@ class Banner extends CI_Controller
             $this->insertBannerData($this->upload->data('file_name'));
             $this->getFlashData('create');
             redirect('dashboard/banner');
-        }   
+        }
     }
 
     public function edit($id, $error = '')
@@ -52,10 +52,10 @@ class Banner extends CI_Controller
 
     public function update($id)
     {
+        $this->formValidation();
         if($this->verifyFile()) {
             $this->deleteCurrentImage($id);
         }
-        $this->formValidation();
 
         if (!$this->upload->do_upload('image') || $this->form_validation->run() == FALSE){
             $error = $this->upload->display_errors();
@@ -136,7 +136,7 @@ class Banner extends CI_Controller
     private function verifyFile()
     {
         $config = ['upload_path' => './assets/images/',
-                   'allowed_types' => 'gif|jpg|png|jpeg',
+                   'allowed_types' => 'gif|jpg|png|jpeg|jfif',
                    'overwrite' => TRUE
                   ];
         $this->load->library('upload', $config);

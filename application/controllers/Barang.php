@@ -17,45 +17,52 @@ class Barang extends CI_Controller
         $this->load->view('dashboard/barang/index', $data);
     }
 
-    public function add()
+    public function add($error = '')
     {
         $data['title'] = 'Tambah Barang';
         $data['tombol'] = 'Tambah';
         $data['url'] = base_url('dashboard/barang/create');
+        $data['error'] = $error;
         $this->load->view('dashboard/barang/form', $data);
     }
 
     public function create()
     {
         $this->formValidation();
-        if ($this->form_validation->run() == FALSE){
-            $this->add();  
-        }
-        else{
-            $this->insertBarangData();
+        $this->verifyFile();
+        if (!$this->upload->do_upload('image') || $this->form_validation->run() == FALSE) {
+            $error = $this->upload->display_errors();
+            $this->add($error);  
+        } else {
+            $this->insertBarangData($this->upload->data('file_name'));
             $this->getFlashData('create');
             redirect('dashboard/barang');
         }   
     }
 
-    public function edit($id)
+    public function edit($id, $error = '')
     {
         $data['title'] = 'Edit Barang';
         $data['row'] = $this->Barang_model->getById($id);
         $data['tombol'] = 'Update';
         $data['url'] = base_url('dashboard/barang/update/' . $id);
+        $data['error'] = $error;
         $this->load->view('dashboard/barang/form', $data);
     }
 
     public function update($id)
     {
         $this->formValidation();
+        if($this->verifyFile()) {
+            $this->deleteCurrentImage($id);
+        }
 
-        if ($this->form_validation->run() == FALSE){
-            $this->edit();  
+        if (!$this->upload->do_upload('image') || $this->form_validation->run() == FALSE){
+            $error = $this->upload->display_errors();
+            $this->edit($id, $error);  
         }
         else{
-            $this->updateBarangData($id);
+            $this->updateBarangData($id, $this->upload->data('file_name'));
             $this->getFlashData('update');
             redirect('dashboard/barang');
         }    
@@ -64,8 +71,15 @@ class Barang extends CI_Controller
     public function delete($id)
     {
         $this->getFlashData('delete');
+        $this->deleteCurrentImage($id);
         $this->Barang_model->deleteById($id);
         redirect('dashboard/barang');
+    }
+
+    private function deleteCurrentImage($id)
+    {
+        $barang = $this->Barang_model->getById($id);
+        unlink("./assets/images/" . $barang->image);
     }
 
     private function isLoginAlreadyAndIsAdmin()
@@ -83,12 +97,13 @@ class Barang extends CI_Controller
         $this->form_validation->set_rules('stock', 'Stock', 'required|is_natural');
     }
 
-    private function insertBarangData()
+    private function insertBarangData($image = '')
     {
         $data = ['name'             => $this->input->post('name'),
                  'description'      => $this->input->post('description'),
                  'price'            => $this->input->post('price'),
                  'stock'            => $this->input->post('stock'),
+                 'image'            => $image,
                  'created_at'       => date('Y-m-d H:i:s'),
                  'updated_at'       => date('Y-m-d H:i:s'),
                 ];
@@ -96,12 +111,13 @@ class Barang extends CI_Controller
         $this->Barang_model->create($data);
     }
 
-    private function updateBarangData($id)
+    private function updateBarangData($id, $image)
     {
         $data = ['name'             => $this->input->post('name'),
                  'description'      => $this->input->post('description'),
                  'price'            => $this->input->post('price'),
                  'stock'            => $this->input->post('stock'),
+                 'image'            => $image,
                  'updated_at'       => date('Y-m-d H:i:s'),
                 ];
 
@@ -125,5 +141,14 @@ class Barang extends CI_Controller
                           'pesan' => 'Barang Berhasil Dihapus'];
             $this->session->set_flashdata($dataPesan);
         }
+    }
+
+    private function verifyFile()
+    {
+        $config = ['upload_path' => './assets/images/',
+                   'allowed_types' => 'gif|jpg|png|jpeg',
+                   'overwrite' => TRUE
+                  ];
+        $this->load->library('upload', $config);
     }
 }

@@ -19,6 +19,15 @@ class Barang_model extends CI_Model
         return $query;
     }
 
+    public function getByCategory($idCategory)
+    {
+        $query = $this->db->select('*')
+                          ->where('category_id', $idCategory)
+                          ->get('barang')
+                          ->result();
+        return $query;
+    }
+
     public function update($id, $data)
     {
         $this->db->where('id', $id);
