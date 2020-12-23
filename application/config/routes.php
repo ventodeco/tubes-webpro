@@ -44,3 +44,7 @@ $route['dashboard/banner/create'] = 'banner/create';
 $route['dashboard/banner/edit/(:any)'] = 'banner/edit/$1';
 $route['dashboard/banner/update/(:any)'] = 'banner/update/$1';
 $route['dashboard/banner/delete/(:any)'] = 'banner/delete/$1';
+
+// home
+$route['products'] = 'home/products/0';
+$route['products/(:any)'] = 'home/products/$1';

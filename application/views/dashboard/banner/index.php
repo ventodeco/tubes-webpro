@@ -18,7 +18,7 @@
             <?php foreach ($allBanner as $banner): ?>
                 <tr>
                   <td>
-                    <img src="<?php echo base_url('assets/images/') . $banner->image; ?>" width="500px;">
+                    <img src="<?php echo base_url('assets/images/') . $banner->image; ?>" width="500px;" alt="">
                   </td>
                   <td><?php echo $banner->name ?></td>
                   <td>
