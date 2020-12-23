@@ -8,6 +8,7 @@ class Barang extends CI_Controller
         parent::__construct();
         $this->isLoginAlreadyAndIsAdmin();
         $this->load->model('Barang_model');
+        $this->load->model('Category_model');
     }
 
     public function index()
@@ -21,6 +22,7 @@ class Barang extends CI_Controller
     {
         $data['title'] = 'Tambah Barang';
         $data['tombol'] = 'Tambah';
+        $data['categories'] = $this->Category_model->getAllCategory();
         $data['url'] = base_url('dashboard/barang/create');
         $data['error'] = $error;
         $this->load->view('dashboard/barang/form', $data);
@@ -32,12 +34,12 @@ class Barang extends CI_Controller
         $this->verifyFile();
         if (!$this->upload->do_upload('image') || $this->form_validation->run() == FALSE) {
             $error = $this->upload->display_errors();
-            $this->add($error);  
+            $this->add($error);
         } else {
             $this->insertBarangData($this->upload->data('file_name'));
             $this->getFlashData('create');
             redirect('dashboard/barang');
-        }   
+        }
     }
 
     public function edit($id, $error = '')
@@ -45,6 +47,7 @@ class Barang extends CI_Controller
         $data['title'] = 'Edit Barang';
         $data['row'] = $this->Barang_model->getById($id);
         $data['tombol'] = 'Update';
+        $data['categories'] = $this->Category_model->getAllCategory();
         $data['url'] = base_url('dashboard/barang/update/' . $id);
         $data['error'] = $error;
         $this->load->view('dashboard/barang/form', $data);
@@ -95,6 +98,7 @@ class Barang extends CI_Controller
         $this->form_validation->set_rules('description', 'Description', 'required|min_length[6]'); 
         $this->form_validation->set_rules('price', 'Price', 'required|is_natural');
         $this->form_validation->set_rules('stock', 'Stock', 'required|is_natural');
+        $this->form_validation->set_rules('category_id', 'Category', 'required');
     }
 
     private function insertBarangData($image = '')
@@ -103,6 +107,7 @@ class Barang extends CI_Controller
                  'description'      => $this->input->post('description'),
                  'price'            => $this->input->post('price'),
                  'stock'            => $this->input->post('stock'),
+                 'category_id'      => $this->input->post('category_id'),
                  'image'            => $image,
                  'created_at'       => date('Y-m-d H:i:s'),
                  'updated_at'       => date('Y-m-d H:i:s'),
@@ -117,6 +122,7 @@ class Barang extends CI_Controller
                  'description'      => $this->input->post('description'),
                  'price'            => $this->input->post('price'),
                  'stock'            => $this->input->post('stock'),
+                 'category_id'      => $this->input->post('category_id'),
                  'image'            => $image,
                  'updated_at'       => date('Y-m-d H:i:s'),
                 ];

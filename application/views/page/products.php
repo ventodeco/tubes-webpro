@@ -4,12 +4,16 @@
             <div class="container">
                   <div class="row">
                         <?php foreach ($products as $product): ?>
-                              <div class="card col-md-4 m-auto" style="width: 18rem;">
+                              <div class="card col-md-4 m-auto p-4" style="width: 18rem;">
                                 <h5 class="card-title"><?php echo $product->name; ?></h5>
-                                <img class="card-img-top" src="<?php echo base_url('assets/images/' . $product->image) ?>" alt="Card image cap">
-                                <div class="card-body">
-                                  <p class="card-text"><?php echo $product->price ?></p>
+                                <div class="text-center">
+                                  <img class="card-img-top" style="width: 200px;" src="<?php echo base_url('assets/images/' . $product->image) ?>" alt="Card image cap">
+                                  
                                 </div>
+                                <div class="card-body">
+                                  <p class="card-text"><b> Rp. <?php echo $product->price ?> </b> </p>
+                                </div>
+                                <a href="<?php echo base_url('product/' . $product->id) ?>" class="btn btn-primary">Lihat Produk</a>
                               </div>
                         <?php endforeach ?>
                   </div>

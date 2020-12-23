@@ -15,7 +15,7 @@ class Home extends CI_Controller {
     {
         $data['banners'] = $this->Banner_model->getAllBanner();
         $data['count'] = count($data['banners']);
-
+        $data['title'] = 'Products Mi';
         $data['categories'] = $this->Category_model->getAllCategory();
 
         $this->load->view('page/home', $data);
@@ -25,7 +25,14 @@ class Home extends CI_Controller {
     {
         $data['categories'] = $this->Category_model->getAllCategory();
         $data['products'] = $this->Barang_model->getByCategory($id);
+        $data['title'] = 'Products Mi';
 
         $this->load->view('page/products', $data);
+    }
+
+    public function product($id)
+    {
+        $data['product'] = $this->Barang_model->getById($id);
+        $this->load->view('page/product', $data);
     }
 }
