@@ -1,0 +1,277 @@
+body {
+    background-color: #f5f5f5;
+    font-family: ProximaNova,Arial,sans-serif;
+    font-weight: 300;
+}
+
+div {
+    display: block;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+h2 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+
+}
+
+h3 {
+    text-align: center;
+}
+ul {
+    list-style-type: disc;
+}
+
+li {
+    list-style-type: none;
+}
+ /* buat bikin css yang header site */
+header {
+    display: block;
+}
+
+.mini-header {
+    width: 100%;
+}
+
+.mini-header .tittle-header-container {
+    width: 1226px;
+    height: 90px;
+    margin: 0 auto;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: auto;
+    align-items: center;
+}
+
+.mini-header .mihi-header-site {
+    background-color: #fff;
+    height: 90px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ff6700;
+}
+
+.mini-header .home-logo-container {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    background-color: #ff6700;
+    overflow: hidden;
+}
+
+.mini-header .home-logo-container img {
+    vertical-align: middle;
+    margin-left: -56px;
+    transition: all .2s;
+}
+
+.mini-header .tittle-header {
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 56px;
+    color: #424242;
+    margin: 0 30px;
+    text-transform: uppercase;
+}
+
+.mini-header .spacer {
+    flex-grow: 1;
+}
+
+.mini-header .login {
+    display: flex;
+    flex-basis: auto;
+    flex-flow: row wrap;
+}
+
+.mini-header .masuk {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 18px;
+    color: #757575;
+    margin: 0 20px;
+    position: relative;
+}
+
+.mini-header .masuk a {
+    font-size: inherit;
+    transition: color .1s ease-in-out;
+    display: flex;
+    flex-basis: auto;
+    align-items: center;
+    line-height: 20px;
+}
+
+.mini-header .daftar {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 18px;
+    color: #757575;
+    margin: 0 20px;
+    position: relative;
+}
+
+.mini-header .daftar a {
+    font-size: inherit;
+    transition: color .1s ease-in-out;
+    display: flex;
+    flex-basis: auto;
+    align-items: center;
+    line-height: 20px;
+}
+
+/* buat bikin css header step */
+.mini-header .mini-header-step {
+    padding: 15px 0;
+    height: 0 auto;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.mini-header .Step {
+    width: 1226px;
+    margin: 0 auto;
+    display: flex;
+    flex-basis: auto;
+    flex-flow: row nowrap;
+}
+
+.mini-header .keranjang {
+    margin: 0 36px;
+    flex-grow: 1;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 200;
+    color: #b0b0b0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.mini-header .keranjang-active {
+    margin: 0 36px;
+    flex-grow: 1;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 200;
+    color: #ff6700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* body */
+.gambar_keranjang{
+    margin: 100 100px;
+}
+
+.aduhkosong {
+    color: #b0b0b0;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 20px 0 0;
+}
+
+.klikdong {
+    color: #fff;
+    background-color: #ff6700;
+    font-size: 16px;
+    border: none;
+    line-height: 20px;
+    margin-top: 26px;
+    padding: 12px 32px;
+    width: 160px;
+    height: 44px;
+}
+
+.rec {
+    margin: 0 0 20px;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+    color: #757575;
+    text-align: center;
+}
+
+.cart_recomendation {
+    display: flex;
+    flex-basis: auto;
+    flex-flow: row wrap;
+}
+
+.cart-recomendation .item {
+    background-color: #fff;
+    padding: 40px 45px 30px;
+    width: 234px;
+    min-height: 284px;
+    box-sizing: border-box;
+    margin-top: 14px;
+    margin-right: 14px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cart-recomendation .image {
+    display: block;
+    width: 144px;
+    height: 144px;
+    font-size: 12px;
+    object-fit: contain;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* css untuk step 2 & 3 */
+.information{
+    padding: 70px;
+}
+
+pre{
+    font-size: 14px;
+    border: 0;
+}
+
+.bodyinformation{
+    min-height: 300px;
+}
+
+.bodyinformation_pembayaran{
+    margin-top: -60px;
+}
+
+th{
+    background-color: #ff6700;
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    width: 1000px;
+}
+
+.detail_pembayaran {
+    border: 1px solid black;
+}
+
+th, td{
+    text-align: left;
+    padding: 8px;
+}
+
+.subtotal{
+    color: white;
+    background-color: grey;
+}
