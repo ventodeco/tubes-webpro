@@ -1,6 +1,17 @@
 <?php $this->load->view('page/partial/header_keranjang'); ?>
 
 <div class="mini-header mini-header-step">
+              <div class="mini-header mihi-header-site">
+                <div class="tittle-header-container">
+                    <div class="home-logo-container">
+                        <a href="<?php echo base_url('home'); ?>">
+                            <img src="<?php echo base_url('assets/images/mihome.png') ?>" alt="Xiaomi">
+                        </a>
+                    </div>
+                    <h1 class="tittle-header">Keranjang belanja saya</h1>
+                    <div class="spacer"></div>
+                </div>
+            </div>
             <ul class="mini-header-step Step">
                 <li class="Step step_by_step">
                     <span class="step_by_step keranjang">1. Keranjang</span>
