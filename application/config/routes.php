@@ -45,6 +45,10 @@ $route['dashboard/banner/edit/(:any)'] = 'banner/edit/$1';
 $route['dashboard/banner/update/(:any)'] = 'banner/update/$1';
 $route['dashboard/banner/delete/(:any)'] = 'banner/delete/$1';
 
+// admin pesanan
+$route['dashboard/pesanan'] = 'pesanan';
+$route['dashboard/pesanan/editStatus/(:any)'] = 'pesanan/editStatus/$1';
+
 // home
 $route['products'] = 'home/products/0';
 $route['products/(:any)'] = 'home/products/$1';
@@ -53,3 +57,4 @@ $route['product/(:any)'] = 'home/product/$1';
 
 // keranjang
 $route['keranjang'] = 'keranjang';
+$route['keranjang/konfirmasi/(:any)'] = 'keranjang/konfirmasi/$1';

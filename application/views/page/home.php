@@ -18,10 +18,8 @@
 		<li class="nav-item"><a href="#">|</a></li>
 		<li class="nav-item"> <a href="<?php echo base_url('register'); ?>">Daftar</a></li>
 		<?php } ?>
-		<?php if ($this->session->is_admin) { ?>
 			<li class="nav-item"><a href="#">|</a></li>
 			<li class="nav-item"> <a href="<?php echo base_url('dashboard'); ?>">Dashboard</a></li>
-		<?php } ?>
 		<li class="nav-item"> <a href="#">|</a></li>
 		<li class="nav-item"> <a href="<?php echo base_url('keranjang'); ?>"><span class="	glyphicon glyphicon-shopping-cart"></span>  Keranjang</a></li> 
 	    </ul>
