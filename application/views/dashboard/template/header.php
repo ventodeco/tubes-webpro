@@ -32,6 +32,7 @@
             <li><a href="<?php echo base_url('dashboard/kategori'); ?>">Kategori</a></li>
             <li><a href="<?php echo base_url('dashboard/kota'); ?>">Kota</a></li>
             <li><a href="<?php echo base_url('dashboard/banner'); ?>">Banner</a></li>
+            <li><a href="<?php echo base_url('dashboard/pesanan'); ?>">Pesanan</a></li>
             <li><a href="<?php echo base_url('logout'); ?>">Logout</a></li>
         </ul>
     </div>

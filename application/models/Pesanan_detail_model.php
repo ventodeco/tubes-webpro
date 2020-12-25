@@ -23,4 +23,13 @@ class Pesanan_detail_model extends CI_Model
     {
         return $this->db->select("*")->limit(1)->order_by('id',"DESC")->get("pesanan_detail")->row();
     }
+
+    public function getByPesananId($pesananId)
+    {
+        return $this->db->select('*')
+                ->where('pesanan_id', $pesananId)
+                ->order_by('id',"DESC")
+                ->get('pesanan_detail')
+                ->row();
+    }
 }

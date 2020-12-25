@@ -58,7 +58,7 @@
             <pre>
                 silahkan melakukan pembayaran melalui bank <b>BCA</b>
                 Nomor rekening : 123-456-789 (XIAOMI INDONESIA)
-                silahkan lakukan konfirmasi pembayaran <a href="<?php echo base_url('keranjang/konfirmasi'); ?>"><u><b>disini</b></u></a>
+                silahkan lakukan konfirmasi pembayaran <a href="<?php echo base_url('keranjang/konfirmasi/' . $pesanan->id); ?>"><u><b>disini</b></u></a>
             </pre>
         </div>
     </main>

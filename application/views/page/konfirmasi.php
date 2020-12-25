@@ -15,8 +15,8 @@
         <div class="mini-header mihi-header-site">
             <div class="tittle-header-container">
                 <div class="home-logo-container">
-                    <a href="home.html">
-                        <img src="assets/mihome.png" alt="Xiaomi">
+                    <a href="<?php echo base_url('home'); ?>">
+                        <img src="<?php echo base_url('assets/images/mihome.png') ?>" alt="Xiaomi">
                     </a>
                 </div>
                 <h1 class="tittle-header">Keranjang belanja saya</h1>
@@ -40,18 +40,20 @@
    
     <main class="information">
         <div class="bodyinformation_pembayaran">
-          <form action="<?php echo base_url(''); ?>"></form>
+          <form method="post" action="<?php echo base_url('keranjang/konfirmasiSend'); ?>">
             <h3>Konfirmasi Pembayaran</h3> <br>
             <pre>
-                Nama Akun        : <input type="text" name="nama"> <br>
-                No rekening      : <input type="int" name="No Kartu"> <br>
-                total pembayaran : <input type="password" name="No Kartu"> <br>
-                tanggal transfer : <input type="password" name="No Kartu"> <br>
+                Nama Akun        : <input type="text" name="nama_account"> <br>
+                No rekening      : <input type="text" name="nomor_rekening"> <br>
+                total pembayaran : <input type="text" name="total_pembayaran"> <br>
+                tanggal transfer : <input type="text" name="tanggal_transfer"> <br>
             </pre>
         </div>
+                <input type="text" name="pesanan_id" value="<?php echo $pesanan->id; ?>" hidden>
         <div class="submit_yuk">
-            <button type="Submit" name="Submit" class="submit_akun">Submit</button>
+            <input type="submit" style="border: none; border-radius: 5px;" class="btn submit_akun" value="Konfirmasi">
         </div>
+      </form>
     </main>
 
     <footer class="row">
