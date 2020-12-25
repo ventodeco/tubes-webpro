@@ -31,10 +31,9 @@
                   <td><?php echo $pesan->status ?></td>
                   <td>
 
-                    <?php if ($pesan->status == 'menunggu pembayaran'): ?>
+                    <?php if ($pesan->status == 'menunggu pembayaran' && !$this->session->is_admin): ?>
                       <a type="button" class="btn btn-primary" href="<?php echo base_url('keranjang/detailPesanan/' . $pesan->id); ?>">Konfirmasi Pembayaran</a>
                     <?php endif ?>
-                      
 
                       <?php if ($this->session->is_admin): ?>
                         <a type="button" class="btn btn-warning" href="<?php echo base_url('dashboard/pesanan/editStatus/') . $pesan->id; ?>">Ubah Status</a>

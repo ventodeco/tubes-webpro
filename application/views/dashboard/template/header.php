@@ -26,12 +26,14 @@
             <div class="clear"></div>
         </div>
         <ul class="nav menu">
-            <li><a href="<?php echo base_url('dashboard'); ?>">Dashboard</a></li>
-            <li><a href="<?php echo base_url('home'); ?>">Home</a></li>
-            <li><a href="<?php echo base_url('dashboard/barang'); ?>">Barang</a></li>
-            <li><a href="<?php echo base_url('dashboard/kategori'); ?>">Kategori</a></li>
-            <li><a href="<?php echo base_url('dashboard/kota'); ?>">Kota</a></li>
-            <li><a href="<?php echo base_url('dashboard/banner'); ?>">Banner</a></li>
+        <?php if ($this->session->is_admin): ?>
+                <li><a href="<?php echo base_url('dashboard'); ?>">Dashboard</a></li>
+                <li><a href="<?php echo base_url('home'); ?>">Home</a></li>
+                <li><a href="<?php echo base_url('dashboard/barang'); ?>">Barang</a></li>
+                <li><a href="<?php echo base_url('dashboard/kategori'); ?>">Kategori</a></li>
+                <li><a href="<?php echo base_url('dashboard/kota'); ?>">Kota</a></li>
+                <li><a href="<?php echo base_url('dashboard/banner'); ?>">Banner</a></li>
+            <?php endif ?>
             <li><a href="<?php echo base_url('dashboard/pesanan'); ?>">Pesanan</a></li>
             <li><a href="<?php echo base_url('logout'); ?>">Logout</a></li>
         </ul>

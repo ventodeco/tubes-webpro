@@ -46,7 +46,7 @@ class Pesanan_model extends CI_Model
     public function getDetailPesanan()
     {
         $this->db->select(
-            'pesanan.id,
+           'pesanan.id,
             pesanan.nama_penerima, 
             pesanan.alamat, 
             konfirmasi_pembayaran.tanggal_transfer,
@@ -63,5 +63,34 @@ class Pesanan_model extends CI_Model
         $query = $this->db->get()->result();
 
         return $query;
+    }
+
+    public function getDetailPesananById($id)
+    {
+        $this->db->select(
+           'pesanan.id,
+            pesanan.nama_penerima, 
+            pesanan.alamat, 
+            konfirmasi_pembayaran.tanggal_transfer,
+            pesanan.nomor_hp, 
+            barang.name, 
+            pesanan_detail.quantity, 
+            pesanan_detail.harga, 
+            pesanan.status'
+        );
+        $this->db->from('pesanan');
+        $this->db->join('pesanan_detail', 'pesanan_detail.pesanan_id = pesanan.id', 'INNER');
+        $this->db->join('barang', 'pesanan_detail.barang_id = barang.id', 'INNER');
+        $this->db->join('konfirmasi_pembayaran', 'konfirmasi_pembayaran.pesanan_id = pesanan.id', 'INNER');
+        $this->db->where('user_id', $id);
+        $query = $this->db->get()->result();
+
+        return $query;
+    }
+
+    public function updateStatus($status, $id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->update('pesanan', ['status' => $status]);
     }
 }
